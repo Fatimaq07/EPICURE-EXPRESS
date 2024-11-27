@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Epicure Express</title>
+    <style>
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            position: relative; /* Ensure positioning for pseudo-element */
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Pseudo-element for watermark background */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('assets\ordernowbg.png'); /* Ensure correct path */
+            background-size: cover;
+            background-position: center;
+            opacity: 1.1; /* Adjust opacity for watermark effect */
+            z-index: -1; /* Place behind all content */
+        }
+
+        /* Header styles */
+        header {
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: 251px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 15px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            background-color: #555;
+        }
+
+        /* Main content styles */
+        main {
+            padding: 80px 20px 20px; /* Account for header height */
+            background-image: url('assets\ordernowbg.png'); /* Background image */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .page-title {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff; /* Changed from black to white for better readability */
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .menu-item {
+            margin-bottom: 15px;
+        }
+
+        .menu-item label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .menu-item select, .menu-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .order-details {
+            margin-top: 20px;
+        }
+
+        .order-details label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .order-details textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            resize: vertical; /* Allow vertical resizing of textarea */
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #ffcc00;
+            border: none;
+            color: #333;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e6b800;
+        }
+
+        /* Footer styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="assets/ordernow.logo.png" alt="Epicure Express Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="order.html">Order Now</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="signup.html">Sign Up</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1 class="page-title">Place Your Order</h1>
+        <section class="order-form">
+            <h2>Select Your Items</h2>
+            <form id="orderForm">
+                <div class="menu-item">
+                    <label for="pizza">Pizza:</label>
+                    <select id="pizza" name="pizza">
+                        <option value="margherita">Margherita</option>
+                        <option value="pepperoni">Pepperoni</option>
+                        <option value="veggie">Veggie</option>
+                    </select>
+                </div>
+                <div class="menu-item">
+                    <label for="drink">Drink:</label>
+                    <select id="drink" name="drink">
+                        <option value="coke">Coke</option>
+                        <option value="sprite">Sprite</option>
+                        <option value="water">Water</option>
+                    </select>
+                </div>
+                <div class="menu-item">
+                    <label for="sides">Sides:</label>
+                    <input type="checkbox" id="fries" name="sides" value="fries">
+                    <label for="fries">Fries</label>
+                    <input type="checkbox" id="onion-rings" name="sides" value="onion-rings">
+                    <label for="onion-rings">Onion Rings</label>
+                </div>
+                <div class="order-details">
+                    <label for="specialRequests">Special Requests:</label>
+                    <textarea id="specialRequests" name="specialRequests" rows="4" placeholder="Any special instructions?"></textarea>
+                </div>
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2024 Epicure Express. All rights reserved.</p>
+    </footer>
+</body>
+</html>

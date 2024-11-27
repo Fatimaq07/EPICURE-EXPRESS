@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Epicure Express</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            background-size: cover;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+        }
+        .left-side {
+            background-image: url('assets/loginimg.jpg');
+            background-size: cover;
+            background-position: center;
+            width: 50%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+
+        .right-side {
+            width: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        h2 {
+            margin-top: 19px;
+            text-align: -webkit-center;
+            margin-inline-end: auto;
+        }
+
+        p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s ease;
+            margin-bottom: 10px;
+        }
+
+        button:hover {
+            background: #218838;
+        }
+
+        .signup-button {
+            background: #007bff;
+        }
+
+        .signup-button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <h2>Create a New Account</h2>
+            <p>Don't have an account yet? <a href="signup.html">Sign up here</a>.</p>
+            <h2>Already Registered? Login</h2>
+            <p>Already have an account? <a href="login.html">Login here</a>.</p>
+        </div>
+        <div class="right-side">
+            <div class="login-container">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    
+                    <button type="submit">Login</button>
+                </form>
+                <a href="signup.html"><button class="signup-button">Sign Up</button></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
